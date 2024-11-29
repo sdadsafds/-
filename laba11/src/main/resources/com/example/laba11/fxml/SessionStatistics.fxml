@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.club.controllers.SessionStatisticsController">
+    <TextField fx:id="userIdField" promptText="Введите ID пользователя"/>
+    <Button text="Показать сессию" onAction="#showSessionDetails"/>
+    <Label fx:id="sessionDetailsLabel"/>
+</VBox>

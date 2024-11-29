@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.club.controllers.SessionManagementController">
+    <TextField fx:id="userIdField" promptText="ID пользователя"/>
+    <TextField fx:id="computerIdField" promptText="ID компьютера"/>
+    <TextField fx:id="startTimeField" promptText="Время начала сессии"/>
+    <Button text="Начать сессию" onAction="#startSession"/>
+    <Button text="Завершить сессию" onAction="#endSession"/>
+    <Label fx:id="statusLabel"/>
+</VBox>

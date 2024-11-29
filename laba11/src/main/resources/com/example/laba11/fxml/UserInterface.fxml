@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" spacing="15.0" fx:controller="com.club.controllers.UserInterfaceController">
+
+    <!-- Отображение баланса пользователя -->
+    <Label fx:id="balanceLabel" text="Баланс: 0.0 руб." style="-fx-font-size: 18px;" />
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Фильтр по тексту:" />
+        <TextField fx:id="filterTextField" promptText="Введите текст для фильтрации" />
+
+        <Label text="Фильтр по жанру:" />
+        <ComboBox fx:id="genreComboBox" promptText="Выберите жанр">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Экшн" />
+                    <String fx:value="Стратегия" />
+                    <String fx:value="РПГ" />
+                    <String fx:value="Головоломка" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Label text="Рейтинг:" />
+        <ComboBox fx:id="ratingComboBox" promptText="Минимальный рейтинг">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="1" />
+                    <String fx:value="2" />
+                    <String fx:value="3" />
+                    <String fx:value="4" />
+                    <String fx:value="5" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Button fx:id="applyFilterButton" text="Применить фильтр" onAction="#handleApplyFilter"/>
+        <Button fx:id="resetFilterButton" text="Сбросить фильтры" onAction="#handleResetFilter" />
+
+    </HBox>
+
+    <!-- Список доступных игр -->
+    <Label text="Выберите игру для начала:" style="-fx-font-size: 16px;" />
+    <ListView fx:id="gameListView" prefHeight="200" prefWidth="300" />
+
+    <!-- Кнопка для запуска игры -->
+    <Button fx:id="playButton" text="Играть" style="-fx-font-size: 16px;" maxWidth="150" onAction="#handlePlayGame" />
+
+    <!-- Сообщение для действий -->
+    <Label fx:id="messageLabel" text="" style="-fx-text-fill: green; -fx-font-size: 14px;" />
+</VBox>

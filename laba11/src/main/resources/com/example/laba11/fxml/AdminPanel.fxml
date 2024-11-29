@@ -1,0 +1,61 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.club.controllers.AdminController" spacing="10">
+
+    <!-- Таблица пользователей -->
+    <TableView fx:id="usersTable">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn"/>
+            <TableColumn text="Имя" fx:id="nameColumn"/>
+            <TableColumn text="Баланс" fx:id="balanceColumn"/>
+        </columns>
+    </TableView>
+
+    <!-- Управление балансом пользователей -->
+    <HBox spacing="10">
+        <TextField fx:id="userIdField" promptText="ID пользователя"/>
+        <TextField fx:id="amountField" promptText="Сумма"/>
+    </HBox>
+    <HBox spacing="10">
+        <Button text="Добавить баланс" onAction="#handleAddBalance"/>
+        <Button text="Списать баланс" onAction="#handleDeductBalance"/>
+    </HBox>
+    <Label fx:id="statusLabel"/>
+
+    <!-- Таблица сессий -->
+    <TableView fx:id="sessionsTable">
+        <columns>
+            <TableColumn text="ID Сессии" fx:id="sessionIdColumn"/>
+            <TableColumn text="ID Пользователя" fx:id="sessionUserIdColumn"/>
+            <TableColumn text="ID Компьютера" fx:id="sessionComputerIdColumn"/>
+            <TableColumn text="Время начала" fx:id="startTimeColumn"/>
+            <TableColumn text="Время окончания" fx:id="endTimeColumn"/>
+            <TableColumn text="Стоимость" fx:id="costColumn"/>
+        </columns>
+    </TableView>
+
+    <!-- Управление сессиями -->
+    <HBox spacing="10">
+        <TextField fx:id="sessionUserIdField" promptText="ID пользователя"/>
+        <TextField fx:id="sessionComputerIdField" promptText="ID компьютера"/>
+        <TextField fx:id="sessionStartTimeField" promptText="Время начала"/>
+        <TextField fx:id="sessionEndTimeField" promptText="Время окончания"/>
+        <TextField fx:id="sessionCostField" promptText="Стоимость"/>
+    </HBox>
+
+    <!-- Таблица компьютеров -->
+    <TableView fx:id="computersTable">
+        <columns>
+            <TableColumn text="ID" fx:id="computerIdColumn"/>
+            <TableColumn text="Характеристики" fx:id="specificationsColumn"/>
+            <TableColumn text="Статус" fx:id="statusColumn"/>
+        </columns>
+    </TableView>
+
+    <!-- Управление компьютерами -->
+    <HBox spacing="10">
+        <Button text="Добавить компьютер" onAction="#openAddComputerForm"/>
+    </HBox>
+</VBox>

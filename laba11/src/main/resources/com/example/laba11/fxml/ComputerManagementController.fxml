@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="222.0" prefWidth="261.0" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.club.controllers.ComputerManagementController">
+    <TextField fx:id="specificationsField" promptText="Характеристики компьютера" />
+    <TextField fx:id="statusField" promptText="Статус компьютера" />
+    <Button onAction="#addComputer" text="Добавить компьютер" />
+    <ListView fx:id="computerListView" prefHeight="150.0" prefWidth="250.0" />
+    <Label fx:id="statusLabel" />
+</VBox>
